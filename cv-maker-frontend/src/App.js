@@ -8,8 +8,8 @@ import PrivateRoute from './routing/PrivateRoute';
 import { ThemeProvider } from 'styled-components';
 import { materialUiTheme, styledComponentsTheme } from './theme/theme';
 import './App.scss';
-import auth from './services/AuthService';
 import PublicRoute from './routing/PublicRoute';
+import auth from './services/AuthService';
 
 function App() {
   return (
@@ -18,13 +18,12 @@ function App() {
         <div>
           <nav>
             <Link to="/">Website</Link> <Link to="editor">Editor</Link> <Link to="login">Login</Link> {'  '}
-            <Link onClick={auth.logout} to="/">
+            <Link onClick={auth.logout()} to="/">
               Log out
             </Link>
           </nav>
 
           <Router>
-            {/* <LoginPage path="login" /> */}
             <PublicRoute component={LoginPage} restricted={auth.isLogin()} path="login" />
             <WebsitePage path="/" default />
             <PrivateRoute path="/editor" component={EditorPage} />

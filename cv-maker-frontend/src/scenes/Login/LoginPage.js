@@ -1,7 +1,7 @@
 import './home-styles.scss';
-import React, { useContext } from 'react';
-import auth from '../../services/AuthService';
+import React from 'react';
 import { navigate } from '@reach/router';
+import auth from '../../services/AuthService';
 
 function LoginPage(props) {
   const handleSubmit = event => {
