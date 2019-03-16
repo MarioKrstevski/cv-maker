@@ -1,8 +1,19 @@
 import './home-styles.scss';
-import React from 'react';
+import React, { useContext } from 'react';
+import auth from '../../services/AuthService';
+import { navigate } from '@reach/router';
 
 function LoginPage(props) {
-  return <div>I am a login page</div>;
+  const handleSubmit = event => {
+    auth.login();
+    navigate('/editor');
+  };
+  return (
+    <div>
+      I am a login page
+      <button onClick={handleSubmit}>Login</button>
+    </div>
+  );
 }
 
 export default LoginPage;
