@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AuthenticationService from 'services/AuthenticationService';
+import AuthenticationService from '../services/AuthenticationService';
 
 const SESSION_STORAGE_KEY = 'USER_DATA';
 const AuthenticationContext = React.createContext({
@@ -7,7 +7,7 @@ const AuthenticationContext = React.createContext({
     name: null,
     role: null,
   },
-  login: (name: string, roles: string[]) => {},
+  login: (name, roles) => {},
   logout: () => {},
 });
 

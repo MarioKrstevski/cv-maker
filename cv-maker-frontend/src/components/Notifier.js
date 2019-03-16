@@ -1,7 +1,7 @@
 import Snackbar from '@material-ui/core/Snackbar';
 import React, { useEffect, useState } from 'react';
 
-let openSnackbarFn;
+let openSnackbarFn: any;
 
 function Notifier() {
   const [state, setState] = useState({ open: false, message: '' });
@@ -19,7 +19,7 @@ function Notifier() {
     return () => (openSnackbarFn = null);
   }, []);
 
-  const message = <span id="snackbar-message-id" dangerouslySetInnerHTML={{ __html: state.message }} />;
+  const message: any = <span id="snackbar-message-id" dangerouslySetInnerHTML={{ __html: state.message }} />;
 
   return (
     <div>

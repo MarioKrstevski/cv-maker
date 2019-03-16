@@ -1,7 +1,7 @@
 import { Location, Redirect } from '@reach/router';
 import React, { useContext } from 'react';
-import { LOGIN_ROUTE } from 'routing/routes';
-import { AuthenticationContext } from 'components/AuthenticationContext';
+import { LOGIN_ROUTE } from './routes';
+import { AuthenticationContext } from '../components/AuthenticationContext';
 
 function getDisplayName(WrappedComponent) {
   return WrappedComponent.displayName || WrappedComponent.name || 'Component';

@@ -1,13 +1,13 @@
-import LoginPage from 'pages/LoginPage';
-import DashboardPage from 'pages/DashboardPage';
+import LoginPage from '../scenes/Login/LoginPage';
+import EditorPage from '../scenes/Editor/EditorPage';
 
 const contextPath = '/client';
 
-const DASHBOARD_ROUTE = {
-  title: 'DASHBOARD',
-  name: 'Dashboard',
+const EDITOR_ROUTE = {
+  title: 'EDITOR',
+  name: 'Editor',
   pathname: `${contextPath}/`,
-  component: DashboardPage,
+  component: EditorPage,
 };
 
 const LOGIN_ROUTE = {
@@ -17,4 +17,4 @@ const LOGIN_ROUTE = {
   component: LoginPage,
 };
 
-export { DASHBOARD_ROUTE, LOGIN_ROUTE };
+export { EDITOR_ROUTE, LOGIN_ROUTE };

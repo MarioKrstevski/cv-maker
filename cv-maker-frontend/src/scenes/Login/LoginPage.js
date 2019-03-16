@@ -1,7 +1,7 @@
 import './home-styles.scss';
 import React from 'react';
 
-function LoginPage() {
+function LoginPage(props) {
   return <div>I am a login page</div>;
 }
 
