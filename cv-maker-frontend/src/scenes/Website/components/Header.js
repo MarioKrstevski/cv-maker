@@ -14,7 +14,7 @@ import { navigate } from '@reach/router';
 function Header() {
   return (
     <HeaderWrapper>
-      <Logo />
+      <Logo toLeft />
       <MainNavigation>
         <li>Resume's</li>
         <li>CV's</li>

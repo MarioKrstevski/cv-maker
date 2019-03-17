@@ -15,7 +15,11 @@ export const HeaderWrapper = styled.div`
 
 export const Logo = styled.img`
   display: flex;
-  margin-right: auto;
+  ${props => {
+    if (props.toLeft) {
+      return `margin-right: auto`;
+    }
+  }}
   height: 50px;
   width: 50px;
   background: url('https://image.shutterstock.com/image-vector/letter-cv-logo-colorful-geometric-260nw-1089897095.jpg')
