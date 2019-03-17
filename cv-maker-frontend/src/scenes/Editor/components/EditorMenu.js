@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EditorMenuWrapper, SideMenu } from '../editor-menu.scmp';
+import { EditorMenuWrapper, SideMenu } from '../editor.scmp';
 import { Logo } from '../../Website/header.scmp';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
