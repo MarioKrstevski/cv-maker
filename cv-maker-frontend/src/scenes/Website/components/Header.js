@@ -22,7 +22,7 @@ function Header() {
         <li>Career Blog</li>
         <li>Pricing</li>
       </MainNavigation>
-      {!auth.isLogin() ? (
+      {auth.isLogin() ? (
         <AccountInformation>
           <button>My Documents</button>
           <HoverPopover />

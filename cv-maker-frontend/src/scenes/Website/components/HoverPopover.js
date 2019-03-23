@@ -82,6 +82,7 @@ class HoverPopover extends React.Component {
               <MenuItem
                 onClick={() => {
                   auth.logout();
+                  window.location.reload();
                 }}
               >
                 Sign Out
