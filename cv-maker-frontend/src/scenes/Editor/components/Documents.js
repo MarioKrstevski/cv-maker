@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { navigate } from '@reach/router';
 
 const resumes = [
   {
-    src:
-      'https://images.ctfassets.net/ii3k8n6p1keg/4PzL61z6408oQCcmOs8We8/edd7aaf8f1581779202fc3fd73382d85/china-cv.png',
+    src: 'https://images.ctfassets.net/ii3k8n6p1keg/4PzL61z6408oQCcmOs8We8/edd7aaf8f1581779202fc3fd73382d85/china-cv.png',
   },
   {
     src: 'https://craft-cv.com/image/en/218/cv-example-pandora.png',
@@ -15,17 +15,22 @@ const resumes = [
 ];
 
 const Document = styled.img`
-width: 150px;
-height: 230px;
-border: 1px solid gray;
-${props => {
-  if (props.toLeft) {
-    return `margin-right: auto`;
-  }
-}}
+  cursor: pointer;
+  width: 150px;
+  height: 230px;
+  border: 1px solid gray;
+  ${props => {
+    if (props.toLeft) {
+      return `margin-right: auto`;
+    }
+  }}
   background: ${props => `src(${props.src}) center no-repeat`} ;
   background-size: cover;
-`;
+
+  &:hover{
+    box-shadow: 5px 5px 5px darkslateblue;
+  }
+  `;
 
 const DocumentsWrapper = styled.div`
   display: flex;
@@ -33,9 +38,17 @@ const DocumentsWrapper = styled.div`
   justify-content: space-around;
   height: 500px;
 `;
-const documents = resumes.map(doc => {
-  return <Document key={doc.src} src={doc.src} />;
-});
+
 export default function Documents() {
-  return <DocumentsWrapper> {documents}</DocumentsWrapper>;
+
+  const navigateToCV = () => {
+    navigate('/preview');
+  }
+
+  const documents = resumes.map(doc => {
+    return <Document onClick={navigateToCV}  key={doc.src} src={doc.src} />;
+  });
+
+
+  return <DocumentsWrapper> {documents} </DocumentsWrapper>;
 }

@@ -4,6 +4,7 @@ import { Router, Link } from '@reach/router';
 import LoginPage from './scenes/Login/LoginPage';
 import EditorPage from './scenes/Editor/EditorPage';
 import WebsitePage from './scenes/Website/WebsitePage';
+import PreviewPage from './scenes/Preview/PreviewPage';
 import PrivateRoute from './routing/PrivateRoute';
 import { ThemeProvider } from 'styled-components';
 import { materialUiTheme, styledComponentsTheme } from './theme/theme';
@@ -18,13 +19,15 @@ function App() {
         <div>
           <nav>
             <Link to="/">Website</Link> <Link to="editor">Editor</Link> <Link to="login">Login</Link> {'  '}
+            <Link to="/preview"> Preview </Link>
             <Link onClick={auth.logout()} to="/">
               Log out
             </Link>
           </nav>
 
           <Router>
-            <PublicRoute component={LoginPage} restricted={auth.isLogin()} path="login" />
+            <PublicRoute component={LoginPage} restricted={auth.isLogin()} path="/login" />
+            <PublicRoute component={PreviewPage} path="/preview" />
             <WebsitePage path="/" default />
             <PrivateRoute path="/editor" component={EditorPage} />
           </Router>

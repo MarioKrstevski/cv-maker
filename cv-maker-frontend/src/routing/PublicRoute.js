@@ -1,9 +1,8 @@
 import React from 'react';
 import { Redirect } from '@reach/router';
-import auth from '../services/AuthService';
 
-const PublicRoute = ({ component: Component, restricted, ...rest }) => {
-  return auth.isLogin() ? <Redirect to="/editor" noThrow /> : <Component {...rest} />;
+const PublicRoute = ({ component: Component, restricted, path, ...rest }) => {
+  return restricted ? <Redirect to={path} noThrow /> : <Component {...rest} />;
 };
 
 export default PublicRoute;

@@ -9,11 +9,13 @@ const auth = {
     localStorage.removeItem(TOKEN_KEY);
   },
   isLogin: () => {
-    if (localStorage.getItem(TOKEN_KEY)) {
-      return true;
-    }
+    // if (localStorage.getItem(TOKEN_KEY)) {
+    //   return true;
+    // }
 
-    return false;
+    // return false;
+
+    return true;
   },
 };
 
